@@ -1,0 +1,55 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = amplifier.o cdplayer.o dvdplayer.o hometheaterfacade.o main.o popcornpopper.o projector.o screen.o theaterlights.o tuner.o
+LINKOBJ  = amplifier.o cdplayer.o dvdplayer.o hometheaterfacade.o main.o popcornpopper.o projector.o screen.o theaterlights.o tuner.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+amplifier.o: amplifier.cpp
+	$(CPP) -c amplifier.cpp -o amplifier.o $(CXXFLAGS)
+
+cdplayer.o: cdplayer.cpp
+	$(CPP) -c cdplayer.cpp -o cdplayer.o $(CXXFLAGS)
+
+dvdplayer.o: dvdplayer.cpp
+	$(CPP) -c dvdplayer.cpp -o dvdplayer.o $(CXXFLAGS)
+
+hometheaterfacade.o: hometheaterfacade.cpp
+	$(CPP) -c hometheaterfacade.cpp -o hometheaterfacade.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+popcornpopper.o: popcornpopper.cpp
+	$(CPP) -c popcornpopper.cpp -o popcornpopper.o $(CXXFLAGS)
+
+projector.o: projector.cpp
+	$(CPP) -c projector.cpp -o projector.o $(CXXFLAGS)
+
+screen.o: screen.cpp
+	$(CPP) -c screen.cpp -o screen.o $(CXXFLAGS)
+
+theaterlights.o: theaterlights.cpp
+	$(CPP) -c theaterlights.cpp -o theaterlights.o $(CXXFLAGS)
+
+tuner.o: tuner.cpp
+	$(CPP) -c tuner.cpp -o tuner.o $(CXXFLAGS)
